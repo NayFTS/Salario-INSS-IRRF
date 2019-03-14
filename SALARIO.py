@@ -11,14 +11,12 @@ class Salario_1:
         if sb >= 2822.91 and sb <= 5645.80:
            inss = (sb* 0.11)
         inss = ((inss*100 + 0.5) / 100.0)
-        print("INSS:", inss)
         return inss
 
     def salario_com_contribuicao(self):
         sb = self.salario_bruto
         inss = self.inss1()
         salCon = sb - inss
-        print("Salario após contribuição INSS:", salCon)
         return (salCon)
     def irrf1(self):
         atual = self.salario_com_contribuicao()
@@ -37,13 +35,11 @@ class Salario_1:
         if (atual> 4664.69):
             irrf = (atual * 0.275) - 869.36
         irrf = (irrf * 100 + 0.5) / 100.0
-        print("IRRF:", irrf)
         return irrf
     def salarioliquido(self):
         sb = self.salario_bruto
         inss = self.inss1()
         irrf = self.irrf1()
         saLiq = (sb - inss - irrf)
-        print("Salario Lquido:", saLiq)
         return (saLiq)
 
