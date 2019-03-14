@@ -2,13 +2,16 @@ class Salario_1:
     def __init__(self, salario_bruto):
         self.salario_bruto = salario_bruto
 
-    def inss1():
-        if salario_bruto >= 0 and salario_bruto <= 1693.72:
-            return (((salario_bruto * 0.08) *100 + 0.5) / 100.0)
-        if salario_bruto >= 1693.73 and salario_bruto <= 2822.90:
-            return (((salario_bruto * 0.09) *100 + 0.5) / 100.0)
-        if salario_bruto >= 2822.91 and salario_bruto <= 5645.80:
-           return (((salario_bruto* 0.11) *100 + 0.5) / 100.0)
+    def inss1(self):
+        sb = self.salario_bruto
+        if sb >= 0 and sb <= 1693.72:
+            inss = (sb * 0.08)
+        if sb >= 1693.73 and sb <= 2822.90:
+            inss = (sb * 0.09)
+        if sb >= 2822.91 and sb <= 5645.80:
+           inss = (sb* 0.11)
+        inss = ((inss*100 + 0.5) / 100.0)
+        return inss
 
     def salario_com_contribuicao():
         return (salario_bruto - self.inss1())
